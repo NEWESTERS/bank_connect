@@ -1,0 +1,270 @@
+*::-webkit-scrollbar {
+    width: 0px;
+}
+body{
+	background: #f5f5f5;
+}
+#wrp{
+	background: white;
+	margin: auto;
+	width: 80%;
+	font-family: "Manrope";
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	animation: fadein 1s ease forwards;
+}
+
+@keyframes fadein {
+	0% {
+		filter: blur(20px);
+		opacity: 0;
+	}
+
+	100% {
+		filter: blur(0px);
+		opacity: 1;
+	}
+}
+
+/*-----------------------------------------
+	header
+-----------------------------------------*/
+#header{
+	height: 28vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: white;
+}
+
+.note{
+	transition: 0.7s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 80%;
+	width: 40%;
+	font-size: 13pt;
+	opacity: 0;
+	transform: scale(0.7);
+}
+.note.visible{
+	transform: scale(1);
+	opacity: 1;
+}
+.note p{
+	margin:0;
+	margin-bottom: 0;
+}
+.names{
+	margin: 3px;
+	font-size: 12pt;
+	color: #95a5a6;
+}
+
+#logo{
+
+	height: 200px;
+	width: auto;
+}
+
+/*-----------------------------------------
+	middle chart
+-----------------------------------------*/
+
+#line_chart_wrp{
+	transition: 0.6s ease;
+	height: 40px;
+	width: 100%;
+	
+	margin-bottom: 25px;
+	display: flex;
+	flex-direction: column;
+	align-items:flex-start;
+	justify-content: space-between;
+}
+#line_chart_wrp.active{
+	height: 350px;
+}
+#test_chart{
+	animation: slide-right 0.7s ease forwards;
+	width: 100%;
+	height: 40px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#about{
+	font-size: 15pt;
+	height: 0px;
+	width: 100%;
+	background: white;
+	transition: 0.6s ease;
+	overflow: hidden;
+	border-bottom: 1px solid #CDDC39;
+}
+#about.active{
+	height: 310px;
+}
+
+#color_line{
+	background: blue;
+	width: 100%;
+	height: 40px;
+}
+
+#about_content{
+	margin-top: 20px;
+	width: 100%;
+	height: 250px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#about_content h3{
+	margin: 2px;
+}
+#about_content p{
+	margin: 3px;
+}
+#about_content img{
+	margin-left: 10%;
+	margin-right: 10%;
+	height: 220px;
+	width: auto;
+}
+.part_in{
+	color: white;
+	font-size: 16pt;
+	transition: 0.7s ease;
+	height: 100%;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.part_in:hover{
+	opacity: 0.7;
+}
+
+#chart_headers{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	font-size: 14pt;
+	font-family: 'Manrope';
+}
+#chart_headers div{
+	border-bottom: 1px solid #009688;
+}
+
+/*-----------------------------------------
+	circle charts
+-----------------------------------------*/
+
+#circ_chars{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+
+
+.progress_wrp{
+	height: 450px;
+	width: 720px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+
+}
+.notation_wrp{
+	transition: 0.7s ease;
+	height: 400px;
+	width: 220px;
+	background: white;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	opacity: 0;
+	transform: scale(0.7);
+}
+.notation_wrp.visible{
+	opacity: 1;
+	transform: scale(1);
+}
+.point{
+	margin-right: 10px;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+}
+.point_container{
+	font-family: 'Manrope';
+	font-size: 12pt;
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+svg text{
+	font-family: 'Manrope';
+	font: bold 30px fill: black;
+	color: black;
+}
+
+circle {
+	transform-origin: center;
+	transition: .7s ease;
+	transform: rotate(-90deg);
+	stroke-width: 40;
+	r:120;
+	cx:155; 
+	cy:155; 
+	fill:none;
+}
+
+circle:hover{
+	stroke-width: 60;
+}
+
+.white_circ{
+	animation: slide-up 0.7s ease forwards;
+	transform: rotate(270deg);
+	stroke-width: 42;
+}
+
+@keyframes slide-right{
+	0%{
+		opacity: 0;
+		width: 0;
+	}
+	100%{
+		opacity: 1;
+		width: 100%;
+	}
+}
+
+@keyframes slide-up {
+    0% {
+        stroke-dasharray: 1193.81, 1193.81;
+    }
+    100% {
+        stroke-dasharray: 0, 1193.81;
+    }
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(#Manrope);
+}
